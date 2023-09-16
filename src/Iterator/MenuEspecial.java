@@ -6,27 +6,28 @@ import Template.Hamburguesa;
 import Template.HamburguesaRes;
 
 public class MenuEspecial {
-    Hashtable<Hamburguesa,String> hamburguesasEspeciales;
-    public class IteradorMenuGeneral{
-        Hashtable<Hamburguesa, String> hamburguesasEspeciales;
-        int i = 0;
-        public IteradorMenuGeneral(Hashtable<Hamburguesa, String> hamburguesasEspeciales){
-            this.hamburguesasEspeciales = hamburguesasEspeciales;
-        }
-        public Hamburguesa next(){
-            return new HamburguesaRes();
-        }
-        public boolean hasNext(){
-            return false;
-        }
-    }
-    public MenuEspecial(Hashtable<Hamburguesa, String> hamburguesasEspeciales){
-        this.hamburguesasEspeciales = hamburguesasEspeciales;
-    }
-    public void anadirItem(Hamburguesa hamburguesa){
-
-    }
-    public void crearIterador(){
-
-    }
+  Hashtable<String, MenuComponent> hamburguesasEspeciales;
+  String name, description;
+  public MenuEspecial(String name, String description){
+      this.hamburguesasEspeciales = hamburguesasEspeciales;
+  }
+  @Override 
+  public void add(MenuComponent menuComponent){
+    this.hamburguesasEspeciales.add(menuComponent.getName(), menuComponent);
+  }
+  @Override 
+  public void remove(MenuComponent menuComponent){
+    this.hamburguesasEspeciales.remove(menuComponent.getName());
+  }
+  @Override
+  public String getName(){
+    return this.name;
+  }
+  @Override
+  public String getDescription(){
+    return this.description;
+  }
+  public void crearIterador(){
+    return this.hamburguesasEspeciales.iterator();
+  }
 }
