@@ -1,4 +1,7 @@
 package Template;
+
+import java.util.Scanner;
+
 public abstract class Hamburguesa{
     int id;
     String nombre; 
@@ -28,29 +31,47 @@ public abstract class Hamburguesa{
         return esVegetariana;
     }
     public void prepararHamburguesa(){
+        System.out.println("Preparandote una hamburguesa estimado cliente");
 
     }
     public void ponerPan(){
-
+        System.out.println("Poniendo pan. Asi es");
     }
     public void ponerMayonesa(){
-
+        System.out.println("Una buena hamburguesa debe llevar Mayonesa McCormick. Hellmans, Hellmans. Que bruto!");
     }
-    public void Mostaza(){
-
+    public void ponerMostaza(){
+        System.out.println("Agregando la mostaza.");
     }
     public abstract void prepararCarne();
     public void ponerCarne(){
-
+        System.out.println("Agregando la carne");
     }
     public void ponerQueso(){
+        if(tieneQueso){
+            Scanner scan = new Scanner(System.in);
+            System.out.println("¿Le gustaria agregar queso a su hamburguesa estimado cliente?");
+            System.out.println("1. Si    2. No    3. SIIII ADORO EL QUESO, PONLE QUESO EXTRA");
+            int i = 0;
+            try{
+                i = scan.nextInt();
+            }
+            catch(Exception e){
+                System.out.println("No entendi, supongamos que no quieres queso");
+            }
+            if(i == 1)
+                System.out.println("Aqui tiene su queso cliente");
+            if(i == 3)
+                System.out.println("Queso extra para nuestro querido cliente");
+            scan.close();
+        }
+
 
     }
     public void ponerVegetales(){
-
+        System.out.println("Lechuga, tomate, cebolla y pepinillos");
     }
     public void ponerCatsup(){
-
+        System.out.println("Agregando ketchup. Y Asereje, a, reje, rejeturebeseiyounoubianajabeandebugidemajibiriki");
     }
-
 }
