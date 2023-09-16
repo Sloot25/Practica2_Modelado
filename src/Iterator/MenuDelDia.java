@@ -10,13 +10,12 @@ public class MenuDelDia{
   public MenuDelDia(String name, String description){
     this.name = name;
     this.description = description;
+    this.hamburguesasMenuDelDia = new ArrayList<Hamburguesa>();
   }
 
-  @Override
   public void add(MenuComponent menuComponent){
     hamburguesasMenuDelDia.add(menuComponent);
   }
-  @Override 
   public void remove(MenuComponent menuComponent){
     hamburguesasMenuDelDia.remove(menuComponent);
   }
@@ -28,7 +27,8 @@ public class MenuDelDia{
   public String getDescription(){
     return this.description;
   }
+  @Override
   public Iterator crearIterador(){
-
+    return hamburguesasMenuDelDia.iterator();
   }
 }

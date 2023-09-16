@@ -6,18 +6,16 @@ import Template.Hamburguesa;
 import Template.HamburguesaRes;
 
 public class MenuEspecial {
-  Hashtable<String, MenuComponent> hamburguesasEspeciales;
+  Hashtable<String, Hamburguesa> hamburguesasEspeciales;
   String name, description;
   public MenuEspecial(String name, String description){
-      this.hamburguesasEspeciales = hamburguesasEspeciales;
+      this.hamburguesasEspeciales = new Hamburguesa<String, Hamburguesa>();
   }
-  @Override 
-  public void add(MenuComponent menuComponent){
-    this.hamburguesasEspeciales.add(menuComponent.getName(), menuComponent);
+  public void add(Hamburguesa hamburguesa){
+    this.hamburguesasEspeciales.add(hamburguesa.getName();
   }
-  @Override 
-  public void remove(MenuComponent menuComponent){
-    this.hamburguesasEspeciales.remove(menuComponent.getName());
+  public void remove(Hamburguesa hamburguesa){
+    this.hamburguesasEspeciales.remove(hamburguesa.getName());
   }
   @Override
   public String getName(){
@@ -27,7 +25,8 @@ public class MenuEspecial {
   public String getDescription(){
     return this.description;
   }
-  public void crearIterador(){
+  @Override
+  public Iterator crearIterador(){
     return this.hamburguesasEspeciales.iterator();
   }
 }

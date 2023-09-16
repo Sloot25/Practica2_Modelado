@@ -24,7 +24,8 @@ public class MenuGeneral extends MenuComponent{
 
   public MenuGeneral(String name, String description){
     hamburguesasGeneral = new Hamburguesa[3];
-    hamburguesasGeneral[0] = new ;
+    hamburguesasGeneral[0] = new HamburguesaRes();
+    hamburguesasGeneral[1] = new HamburguesaPollo();
     this.name = name; 
     this.description = description;
   }
@@ -39,12 +40,6 @@ public class MenuGeneral extends MenuComponent{
     return this.description;
   } 
   
-  @Override 
-  public MenuComponent getChild(int i){
-    if(i < 0 || i >= hamburguesasGeneral.length)
-      throw new UnsupportedOperationException();
-    return hamburguesasGeneral[i];
-  }
   public Iterator crearIterador(){
     return new IteradorMenuGeneral();
   }
