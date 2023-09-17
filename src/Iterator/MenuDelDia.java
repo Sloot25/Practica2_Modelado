@@ -1,10 +1,10 @@
 package Iterator;
-
+import java.util.Iterator;
 import java.util.ArrayList;
 
 import Template.Hamburguesa;
 
-public class MenuDelDia{
+public class MenuDelDia implements MenuComponent{
   ArrayList<Hamburguesa> hamburguesasMenuDelDia;
   String name, description;
   public MenuDelDia(String name, String description){

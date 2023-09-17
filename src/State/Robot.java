@@ -1,5 +1,5 @@
 package State;
-
+import java.util.Iterator;
 import Iterator.MenuDelDia;
 import Iterator.MenuEspecial;
 import Iterator.MenuGeneral;
@@ -31,11 +31,6 @@ public class Robot {
         estadoActual = suspendido;
     }
 
-    public Robot(MenuGeneral menugeneral, MenuDelDia menudeldia, MenuEspecial menuespecial){
-        this.menugeneral = menugeneral;
-        this.menudeldia = menudeldia;
-        this.menuespecial = menuespecial;
-    }
 
     /*
      * Metodo que nos ayudara como contador cuando el robot este sirviendo

@@ -1,20 +1,33 @@
 package Iterator;
-
+import java.util.Iterator;
 import java.util.Hashtable;
 
 import Template.Hamburguesa;
 import Template.HamburguesaRes;
 
-public class MenuEspecial {
+public class MenuEspecial implements MenuComponent{
   Hashtable<String, Hamburguesa> hamburguesasEspeciales;
+  private class IteratorHashTable implements Iterator{
+    private Iterator iterador;
+    public IteratorHashTable(){
+      this.iterador = hamburguesasEspeciales.keySet().iterator();
+    }
+    public boolean hasNext(){
+      return this.iterador.hasNext();
+    }
+    public Hamburguesa next(){
+      return hamburguesasEspeciales.get(this.iterador.next());
+    }
+
+  }
   String name, description;
   public MenuEspecial(String name, String description){
-      this.hamburguesasEspeciales = new Hamburguesa<String, Hamburguesa>();
+      this.hamburguesasEspeciales = new Hashtable<String, Hamburguesa>();
     this.name = name;
     this.description = description;
   }
   public void add(Hamburguesa hamburguesa){
-    this.hamburguesasEspeciales.add(hamburguesa.getName(), hamburguesa);
+    this.hamburguesasEspeciales.put(hamburguesa.getName(), hamburguesa);
   }
   public void remove(Hamburguesa hamburguesa){
     this.hamburguesasEspeciales.remove(hamburguesa.getName());
@@ -29,6 +42,6 @@ public class MenuEspecial {
   }
   @Override
   public Iterator crearIterador(){
-    return this.hamburguesasEspeciales.iterator();
+    return new IteratorHashTable();
   }
 } 
