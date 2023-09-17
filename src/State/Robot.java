@@ -30,8 +30,6 @@ public class Robot {
         estadoActual = suspendido;
     }
 
-
-
     /*
      * Metodos getter utilizado en las clases Subclases de EstadoRobot para 
      * actualizar el estado del robot dependiendo de la accion que realice.
