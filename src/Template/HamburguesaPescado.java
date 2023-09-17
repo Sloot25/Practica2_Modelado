@@ -1,14 +1,18 @@
 package Template;
 public class HamburguesaPescado extends Hamburguesa{
     public HamburguesaPescado(){
-        tieneQueso = false;
         esVegetariana = false;
-        prepararHamburguesa();
+        nombre = "Hamburguesa de pescado";
+        descripcion = "Rico Rico Pescadito";
+    }
+    @Override
+    public void prepararHamburguesa(){
         ponerPan();
         ponerMayonesa();
         prepararCarne();
         ponerCarne();
-        ponerQueso();
+        if(clienteQuiereQueso())
+            ponerQueso();
         ponerMostaza();
         ponerCatsup();
         ponerVegetales();
@@ -17,9 +21,5 @@ public class HamburguesaPescado extends Hamburguesa{
     @Override 
     public void prepararCarne(){
         System.out.println("Gatito gusta pescadito");
-    }
-    @Override
-    public void clienteQuiereQueso(){
-        tieneQueso = true;
     }
 }

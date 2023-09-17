@@ -2,25 +2,32 @@ package Template;
 
 public class HamburguesaSoya extends Hamburguesa {
     public HamburguesaSoya(){
-        tieneQueso = false;
         esVegetariana = true;
-        prepararHamburguesa();
+        nombre = "Hamburguesa de Soya";
+        descripcion = "Una opcion vegana con soya y avena";
+    }
+    @Override
+    public void prepararHamburguesa(){
         ponerPan();
-        ponerMayonesa();
         prepararCarne();
         ponerCarne();
-        ponerQueso();
+        ponerSalsaSoya();
+        ponerAvena();
         ponerMostaza();
         ponerCatsup();
         ponerVegetales();
         ponerPan();
     }
+
     @Override 
     public void prepararCarne(){
         System.out.println("Preparando hamburguesa de soya");
     }
-    @Override
-    public void clienteQuiereQueso(){
-        tieneQueso = true;
+    public void ponerAvena(){
+        System.out.println("Agregando avena");
+    }
+    public void ponerSalsaSoya(){
+        System.out.println("Agregando salsa de soya");
     }
 }
+

@@ -4,7 +4,7 @@ import Template.*;
 import java.util.NoSuchElementException;
 import java.util.Iterator;
 
-public class MenuGeneral extends MenuComponent{
+public class MenuGeneral implements MenuComponent{
   Hamburguesa[] hamburguesasGeneral;
   String name, description;
   private class IteradorMenuGeneral implements Iterator{

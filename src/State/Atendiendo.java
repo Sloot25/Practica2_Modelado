@@ -1,5 +1,6 @@
 package State;
-
+import Iterator.MenuComponent;
+import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 
 public class Atendiendo implements EstadoRobot{
@@ -32,7 +33,19 @@ public class Atendiendo implements EstadoRobot{
 
     public void ordenar(){
         System.out.println("Sale pues, te muestro el menu:");
-        System.out.println(".\n.\n.\n.\n.\n");           // aqui nos peleamos con colocar el menu y almacenar la hamburguesa que pide
+        //System.out.println(".\n.\n.\n.\n.\n");           // aqui nos peleamos con colocar el menu y almacenar la hamburguesa que pide
+      while(this.robot.iteratorMenus.hasNext()){
+        MenuComponent menus = iteratorMenus.next();
+        Iterator iterator = menus.crearIterador();
+      System.out.println("-------------------------------------------------------------------------");
+        System.out.println(menus.getName());
+      System.out.println("-------------------------------------------------------------------------");
+      System.out.println(menus.getDescription());
+      System.out.println("-------------------------------------------------------------------------");
+        while(iterator.hasNext()){
+          System.out.println(iterator.next());
+        }
+      }
         System.out.println("*******************************");
         System.out.println("*                             *");
         System.out.println("*       MODO ATENDIENDO       *");

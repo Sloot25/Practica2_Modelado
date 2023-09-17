@@ -2,14 +2,17 @@ package Template;
 
 public class HamburguesaHumano extends Hamburguesa{
     public HamburguesaHumano(){
-        tieneQueso = false;
         esVegetariana = false;
-        prepararHamburguesa();
+        nombre = "Hamburguesa de Humano";
+        descripcion = "Hamburguesa preparado con la carne de los clientes que se van sin pagar";
+    }
+    public void prepararHamburguesa(){
         ponerPan();
         ponerMayonesa();
         prepararCarne();
         ponerCarne();
-        ponerQueso();
+        if(clienteQuiereQueso())
+            ponerQueso();
         ponerMostaza();
         ponerCatsup();
         ponerVegetales();
@@ -18,9 +21,5 @@ public class HamburguesaHumano extends Hamburguesa{
     @Override 
     public void prepararCarne(){
         System.out.println("Preparando la carne donada 'voluntariamente' por el ultimo cliente. Tenia que pagar su comida de alguna manera");
-    }
-    @Override
-    public void clienteQuiereQueso(){
-        tieneQueso = true;
     }
 }
