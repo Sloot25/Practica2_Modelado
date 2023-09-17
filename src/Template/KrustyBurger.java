@@ -2,6 +2,8 @@ package Template;
 
 public class KrustyBurger extends Hamburguesa{
     public KrustyBurger(){
+        prepararHamburguesa();
+        advertencia();
         ponerPan();
         ponerMayonesa();
         prepararCarne();

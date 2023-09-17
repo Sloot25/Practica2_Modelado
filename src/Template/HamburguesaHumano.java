@@ -2,6 +2,7 @@ package Template;
 
 public class HamburguesaHumano extends Hamburguesa{
     public HamburguesaHumano(){
+        prepararHamburguesa();
         ponerPan();
         ponerMayonesa();
         prepararCarne();
