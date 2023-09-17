@@ -2,6 +2,7 @@ package Template;
 
 public class Cangreburger extends Hamburguesa{
     public Cangreburger(){
+        this.id = 07;
         esVegetariana = true;
         nombre = "Cangreburger";
         descripcion = "La iconica hamburguesa del Crustacio Cascarudo preparada por el cocinero estrella Bob Esponja";
