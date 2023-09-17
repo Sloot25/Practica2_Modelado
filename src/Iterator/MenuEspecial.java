@@ -22,15 +22,15 @@ public class MenuEspecial implements MenuComponent{
   }
   String name, description;
   public MenuEspecial(String name, String description){
-      this.hamburguesasEspeciales = new Hashtable<String, Hamburguesa>();
+      this.hamburguesasEspeciales = new Hashtable<int, Hamburguesa>();
     this.name = name;
     this.description = description;
   }
   public void add(Hamburguesa hamburguesa){
-    this.hamburguesasEspeciales.put(hamburguesa.getName(), hamburguesa);
+    this.hamburguesasEspeciales.put(hamburguesa.getId(), hamburguesa);
   }
   public void remove(Hamburguesa hamburguesa){
-    this.hamburguesasEspeciales.remove(hamburguesa.getName());
+    this.hamburguesasEspeciales.remove(hamburguesa.getId());
   }
   @Override
   public String getName(){

@@ -4,13 +4,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 public abstract class Hamburguesa{
-    int id;
+    Integer id;
     String nombre; 
     double precio;
     String descripcion;
     Boolean tieneQueso;
     Boolean esVegetariana;
-    public int getId() {
+    public Integer getId() {
         return id;
     }
     public String getName() {
