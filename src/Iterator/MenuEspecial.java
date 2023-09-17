@@ -10,9 +10,11 @@ public class MenuEspecial {
   String name, description;
   public MenuEspecial(String name, String description){
       this.hamburguesasEspeciales = new Hamburguesa<String, Hamburguesa>();
+    this.name = name;
+    this.description = description;
   }
   public void add(Hamburguesa hamburguesa){
-    this.hamburguesasEspeciales.add(hamburguesa.getName();
+    this.hamburguesasEspeciales.add(hamburguesa.getName(), hamburguesa);
   }
   public void remove(Hamburguesa hamburguesa){
     this.hamburguesasEspeciales.remove(hamburguesa.getName());
@@ -29,4 +31,4 @@ public class MenuEspecial {
   public Iterator crearIterador(){
     return this.hamburguesasEspeciales.iterator();
   }
-}
+} 

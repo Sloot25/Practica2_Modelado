@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class MenuGeneral extends MenuComponent{
   Hamburguesa[] hamburguesasGeneral;
   String name, description;
-  public class IteradorMenuGeneral implements Iterator{
+  private class IteradorMenuGeneral implements Iterator{
       private int indice;
       public IteradorMenuGeneral(){
         indice = 0;
@@ -26,6 +26,7 @@ public class MenuGeneral extends MenuComponent{
     hamburguesasGeneral = new Hamburguesa[3];
     hamburguesasGeneral[0] = new HamburguesaRes();
     hamburguesasGeneral[1] = new HamburguesaPollo();
+    hamburguesasGeneral[2] = new HamburguesaSoya();
     this.name = name; 
     this.description = description;
   }
