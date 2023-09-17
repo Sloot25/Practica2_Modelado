@@ -6,7 +6,7 @@ import Template.Hamburguesa;
 import Template.HamburguesaRes;
 
 public class MenuEspecial implements MenuComponent{
-  Hashtable<String, Hamburguesa> hamburguesasEspeciales;
+  Hashtable<Integer, Hamburguesa> hamburguesasEspeciales;
   private class IteratorHashTable implements Iterator{
     private Iterator iterador;
     public IteratorHashTable(){
@@ -22,7 +22,7 @@ public class MenuEspecial implements MenuComponent{
   }
   String name, description;
   public MenuEspecial(String name, String description){
-      this.hamburguesasEspeciales = new Hashtable<int, Hamburguesa>();
+      this.hamburguesasEspeciales = new Hashtable<Integer, Hamburguesa>();
     this.name = name;
     this.description = description;
   }

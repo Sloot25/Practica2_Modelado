@@ -15,16 +15,18 @@ public class MenuGeneral implements MenuComponent{
       public Hamburguesa next() throws NoSuchElementException{
         if(!hasNext())
           throw new NoSuchElementException("No quedan mas elementos");
-        return hamburguesasGeneral[indice++];
+        Hamburguesa hamburguesa = hamburguesasGeneral[indice];
+        indice++;
+        return hamburguesa;
       }
       public boolean hasNext(){
-        return indice < hamburguesasGeneral.length-1;
+        return indice < hamburguesasGeneral.length;
       }
   }
 
   public MenuGeneral(String name, String description){
     hamburguesasGeneral = new Hamburguesa[3];
-    hamburguesasGeneral[0] = new HamburguesaRes();
+    hamburguesasGeneral[0] = new HamburguesaPastor();
     hamburguesasGeneral[1] = new HamburguesaPollo();
     hamburguesasGeneral[2] = new HamburguesaSoya();
     this.name = name; 

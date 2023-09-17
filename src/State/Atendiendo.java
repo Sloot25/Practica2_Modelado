@@ -32,10 +32,11 @@ public class Atendiendo implements EstadoRobot{
     }
 
     public void ordenar(){
+      System.out.println("hola");
         System.out.println("Sale pues, te muestro el menu:");
         //System.out.println(".\n.\n.\n.\n.\n");           // aqui nos peleamos con colocar el menu y almacenar la hamburguesa que pide
       while(this.robot.iteratorMenus.hasNext()){
-        MenuComponent menus = iteratorMenus.next();
+        MenuComponent menus = (MenuComponent) this.robot.iteratorMenus.next();
         Iterator iterator = menus.crearIterador();
       System.out.println("-------------------------------------------------------------------------");
         System.out.println(menus.getName());

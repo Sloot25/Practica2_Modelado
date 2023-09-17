@@ -2,6 +2,7 @@ package Template;
 
 public class KrustyBurger extends Hamburguesa{
     public KrustyBurger(){
+        this.id = 06;
         esVegetariana = true;
         nombre = "KrustyBurger";
         descripcion = "La famosa Hamburguesa del Payaso Krusty";
