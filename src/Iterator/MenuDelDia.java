@@ -13,11 +13,11 @@ public class MenuDelDia{
     this.hamburguesasMenuDelDia = new ArrayList<Hamburguesa>();
   }
 
-  public void add(MenuComponent menuComponent){
-    hamburguesasMenuDelDia.add(menuComponent);
+  public void add(Hamburguesa hamburguesa){
+    hamburguesasMenuDelDia.add(hamburguesa);
   }
-  public void remove(MenuComponent menuComponent){
-    hamburguesasMenuDelDia.remove(menuComponent);
+  public void remove(Hamburguesa hamburguesa){
+    hamburguesasMenuDelDia.remove(hamburguesa);
   }
   @Override 
   public String getName(){

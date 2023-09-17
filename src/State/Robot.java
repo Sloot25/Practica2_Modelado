@@ -12,18 +12,15 @@ public class Robot {
     EstadoRobot sirviendo;
     EstadoRobot autodestruido;
     EstadoRobot estadoActual;
-
-    MenuGeneral menugeneral;
-    MenuDelDia menudeldia;
-    MenuEspecial menuespecial;
-
+    Iterator iteratorMenus;
     int pasosServirPlatillo = 1;
 
 
     /*
      * Constructor temporal para correr la parte de State solamente
      */
-    public Robot(){
+    public Robot(Iterator iteratorMenus){
+      this.iteratorMenus = iteratorMenus;
         suspendido = new Suspendido(this);
         caminando = new Caminando(this);
         atendiendo = new Atendiendo(this);
