@@ -1,5 +1,7 @@
 package Iterator;
 import java.util.Iterator; 
+import java.util.ArrayList;
+import Template.Hamburguesa;
 import java.util.Stack;
 import java.util.NoSuchElementException;
 
@@ -38,9 +40,6 @@ public class Menu implements MenuComponent {
     this.name = name; 
     this.description = description;
     this.listaDeMenus = new ArrayList<MenuComponent>();
-    this.listaDeMenus.add(new MenuDelDia());
-    this.listaDeMenus.add(new MenuEspecial());
-    this.listaDeMenus.add(new MenuGeneral());
   }
   public void add(MenuComponent menuComponent){
     this.listaDeMenus.add(menuComponent);
@@ -55,9 +54,9 @@ public class Menu implements MenuComponent {
     return this.description;
   }
   public MenuComponent getChid(int i ){
-    if(i< 0 || if >= listaDeMenus.size())
+    if(i< 0 || i >= listaDeMenus.size())
       throw new UnsupportedOperationException();
-    return listaDeMenus[i];
+    return listaDeMenus.get(i);
   }
   public void print(){
     System.out.print("\n" + getName());
@@ -70,5 +69,8 @@ public class Menu implements MenuComponent {
   }
   public Iterator crearIterador(){
     return new IteratorCompuesto();
+  }
+  public Iterator getIterator(){
+    return this.listaDeMenus.iterator();
   }
 }

@@ -1,15 +1,15 @@
 package Iterator;
-
+import java.util.Iterator;
 import java.util.Hashtable;
 
 import Template.Hamburguesa;
 import Template.HamburguesaRes;
 
-public class MenuEspecial {
+public class MenuEspecial implements MenuComponent{
   Hashtable<String, Hamburguesa> hamburguesasEspeciales;
   String name, description;
   public MenuEspecial(String name, String description){
-      this.hamburguesasEspeciales = new Hamburguesa<String, Hamburguesa>();
+      this.hamburguesasEspeciales = new Hashtable<String, Hamburguesa>();
     this.name = name;
     this.description = description;
   }

@@ -1,23 +1,23 @@
 import java.util.Scanner;
-
+import java.util.Iterator;
 import State.Robot;
 import Template.*;
 import Iterator.*;
 public class Main {
   public static void main(String[] args){
-    MenuComponent menu = new Menu("Menu de McBurguers", "Bienvenido al menu de McBurguers, dentro del restaurante tenemos las siguientes opciones");
+    Menu menu = new Menu("Menu de McBurguers", "Bienvenido al menu de McBurguers, dentro del restaurante tenemos las siguientes opciones");
     menu.add(new MenuGeneral("Menu principal", "Platillos de todos los dias, para los clientes casuales"));
-    MenuComponent menuEspecial = new MenuEspecial("Menu Exclusivo de gente con Dinero", "Este menu es especial y seleccionado a partir de los mejores ingredientes");
+    MenuEspecial menuEspecial = new MenuEspecial("Menu Exclusivo de gente con Dinero", "Este menu es especial y seleccionado a partir de los mejores ingredientes");
     menuEspecial.add(new HamburguesaHumano());
     menuEspecial.add(new Cangreburger());
     menuEspecial.add(new KrustyBurger());
     menu.add(menuEspecial);
-    MenuComponent menuDelDia = new MenuDelDia("Menu Diario", "Menu diario, notendras otra oportunidad para probar estas hamburguesas");
+    MenuDelDia menuDelDia = new MenuDelDia("Menu Diario", "Menu diario, notendras otra oportunidad para probar estas hamburguesas");
     menuDelDia.add(new HamburguesaPastor());
     menuDelDia.add(new HamburguesaCamaron());
     menuDelDia.add(new HamburguesaLenteja());
     menu.add(menuDelDia);
-		Robot Patricio = new Robot(menu.crearIterador());
+		Robot Patricio = new Robot(menu.getIterator());
 		Scanner sc = new Scanner(System.in);
 		int opcion;
 
