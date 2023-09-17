@@ -48,10 +48,10 @@ public abstract class Hamburguesa{
         System.out.println("Agregando la carne");
     }
     public void ponerQueso(){
-        if(tieneQueso){
+        if(!tieneQueso){
             Scanner scan = new Scanner(System.in);
             System.out.println("¿Le gustaria agregar queso a su hamburguesa estimado cliente?");
-            System.out.println("1. Si    2. No    3. SIIII ADORO EL QUESO, PONLE QUESO EXTRA");
+            System.out.println("1. Si    2. No  ");
             int i = 0;
             try{
                 i = scan.nextInt();
@@ -60,13 +60,11 @@ public abstract class Hamburguesa{
                 System.out.println("No entendi, supongamos que no quieres queso");
             }
             if(i == 1)
-                System.out.println("Aqui tiene su queso cliente");
-            if(i == 3)
-                System.out.println("Queso extra para nuestro querido cliente");
+                tieneQueso();
             scan.close();
         }
-
-
+        else
+            System.out.println("Agregando queso a tu hamburguesa");
     }
     public void ponerVegetales(){
         System.out.println("Lechuga, tomate, cebolla y pepinillos");

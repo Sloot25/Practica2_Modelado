@@ -3,14 +3,15 @@ package Template;
 public class HamburguesaPastor extends Hamburguesa {
 
     public HamburguesaPastor(){
+        tieneQueso = false;
+        esVegetariana = false;
         prepararHamburguesa();
         ponerPan();
         ponerMayonesa();
         prepararCarne();
         ponerCarne();
         ponerPina();
-        if(tieneQueso())
-            ponerQueso();
+        ponerQueso();
         ponerMostaza();
         ponerCatsup();
         ponerVegetales();

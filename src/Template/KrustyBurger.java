@@ -2,14 +2,17 @@ package Template;
 
 public class KrustyBurger extends Hamburguesa{
     public KrustyBurger(){
+        tieneQueso = false;
+        esVegetariana = true;
         prepararHamburguesa();
         advertencia();
         ponerPan();
         ponerMayonesa();
         prepararCarne();
         ponerCarne();
-        if(tieneQueso())
-            ponerQueso();
+        ponerQueso();
+        ponerTocino();
+        salsaSecreta();
         ponerMostaza();
         ponerCatsup();
         ponerVegetales();
@@ -21,6 +24,12 @@ public class KrustyBurger extends Hamburguesa{
     @Override 
     public void prepararCarne(){
         System.out.println("Preparando carne de dudosa calidad.");
+    }
+    public void salsaSecreta(){
+        System.out.println("Agregando salsa secreta");
+    }
+    public void ponerTocino(){
+        System.out.println("Agregando tocino");
     }
     @Override
     public void clienteQuiereQueso(){

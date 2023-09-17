@@ -2,13 +2,14 @@ package Template;
 
 public class HamburguesaSoya extends Hamburguesa {
     public HamburguesaSoya(){
+        tieneQueso = false;
+        esVegetariana = true;
         prepararHamburguesa();
         ponerPan();
         ponerMayonesa();
         prepararCarne();
         ponerCarne();
-        if(tieneQueso())
-            ponerQueso();
+        ponerQueso();
         ponerMostaza();
         ponerCatsup();
         ponerVegetales();
