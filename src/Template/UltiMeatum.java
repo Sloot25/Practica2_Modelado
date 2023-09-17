@@ -2,9 +2,12 @@ package Template;
 
 public class UltiMeatum extends Hamburguesa{
     public UltiMeatum(){
-        tieneQueso = true;
         esVegetariana = false;
-        prepararHamburguesa();
+        nombre = "MagnifiCarne";
+        descripcion = "La mejor hamburguesa del mundo. Solo se prepara una vez cada mil años. El que no se coma una es un zoquete";
+    }
+    @Override
+    public void prepararHamburguesa(){
         ponerPan();
         prepararCarne();
         ponerCarne();
@@ -13,7 +16,6 @@ public class UltiMeatum extends Hamburguesa{
         ponerPan();
         ponerCarne();
         ponerQueso();
-        ponerCatsup();
         ponerPan();
         hamburguesaAdentroDeOtra();
         ponerCarne();
@@ -25,14 +27,10 @@ public class UltiMeatum extends Hamburguesa{
         System.out.println("Preparando toda la carne");
     }
     public void hamburguesaAdentroDeOtra(){
-        System.out.println("La UltiMeatum lleva ... Una hamburguesa con queso adentro de una hamburguesa con queso");
+        System.out.println("Agregando hamburguesa de queso adentro de otra hamburguesa de queso");
     }
     @Override
     public void ponerCatsup(){
         System.out.println("Agregando catsup especial traída del Himalaya");
-    }
-    @Override
-    public void clienteQuiereQueso(){
-        tieneQueso = true;
     }
 }

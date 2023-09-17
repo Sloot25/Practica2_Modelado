@@ -2,14 +2,18 @@ package Template;
 
 public class HamburguesaLenteja extends Hamburguesa{
     public HamburguesaLenteja(){
-        tieneQueso = false;
         esVegetariana = true;
-        prepararHamburguesa();
+        nombre = "Hamburguesa de Lentejas";
+        descripcion = "Opcion saludable y nutritiva";
+    }
+    @Override
+    public void prepararHamburguesa(){
         ponerPan();
         ponerMayonesa();
         prepararCarne();
         ponerCarne();
-        ponerQueso();
+        if(clienteQuiereQueso())
+            ponerQueso();
         ponerMostaza();
         ponerCatsup();
         ponerVegetales();
@@ -20,7 +24,7 @@ public class HamburguesaLenteja extends Hamburguesa{
        System.out.println("Preparando la hamburguesa de lentejas"); 
     }
     @Override
-    public void clienteQuiereQueso(){
-        tieneQueso = true;
+    public void ponerVegetales(){
+        System.out.println("Zanahoria, pimiento, cebolla");
     }
 }

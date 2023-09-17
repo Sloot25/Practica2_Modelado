@@ -2,15 +2,19 @@ package Template;
 
 public class KrustyBurger extends Hamburguesa{
     public KrustyBurger(){
-        tieneQueso = false;
         esVegetariana = true;
-        prepararHamburguesa();
+        nombre = "KrustyBurger";
+        descripcion = "La famosa Hamburguesa del Payaso Krusty";
+    }
+    @Override
+    public void prepararHamburguesa(){
         advertencia();
         ponerPan();
         ponerMayonesa();
         prepararCarne();
         ponerCarne();
-        ponerQueso();
+        if(clienteQuiereQueso())
+            ponerQueso();
         ponerTocino();
         salsaSecreta();
         ponerMostaza();
@@ -30,9 +34,5 @@ public class KrustyBurger extends Hamburguesa{
     }
     public void ponerTocino(){
         System.out.println("Agregando tocino");
-    }
-    @Override
-    public void clienteQuiereQueso(){
-        tieneQueso = true;
     }
 }

@@ -2,14 +2,18 @@ package Template;
 
 public class HamburguesaPollo extends Hamburguesa {
     public HamburguesaPollo(){
-        tieneQueso = false;
         esVegetariana = false;
-        prepararHamburguesa();
+        nombre = "Hamburguesa de Pollo";
+        descripcion = "Un poco de Pollito ";
+    }
+    @Override
+    public void prepararHamburguesa(){
         ponerPan();
         ponerMayonesa();
         prepararCarne();
         ponerCarne();
-        ponerQueso();
+        if(clienteQuiereQueso())
+            ponerQueso();
         ponerMostaza();
         ponerCatsup();
         ponerVegetales();
@@ -21,9 +25,5 @@ public class HamburguesaPollo extends Hamburguesa {
        System.out.println("Quieto, no me estes picoteando. AAAAAAAA");
        System.out.println("Ya tenemos a la gallina lista para cocinar");
 
-    }
-    @Override
-    public void clienteQuiereQueso(){
-        tieneQueso = true;
     }
 }
