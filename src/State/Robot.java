@@ -13,7 +13,6 @@ public class Robot {
     EstadoRobot autodestruido;
     EstadoRobot estadoActual;
     Iterator iteratorMenus;
-    int pasosServirPlatillo = 1;
 
 
     /*
@@ -35,15 +34,6 @@ public class Robot {
         this.menugeneral = menugeneral;
         this.menudeldia = menudeldia;
         this.menuespecial = menuespecial;
-    }
-
-    /*
-     * Metodo que nos ayudara como contador cuando el robot este sirviendo
-     * ya que requerimos que el usuario seleccione servir al menos una vez
-     * para avanzar.
-     */
-    public void reducirPasosServirPlatillo(){
-        pasosServirPlatillo = pasosServirPlatillo - 1;
     }
 
 

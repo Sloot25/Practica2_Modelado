@@ -48,36 +48,11 @@ public class Sirviendo implements EstadoRobot{
         System.out.println("*******************************\n");
     }
     public void servir(){
-        if(robot.pasosServirPlatillo > 0){
-            try {
-            System.out.println("Sirviendo...");
-            time.sleep(2);
-            System.out.println("...");
-            time.sleep(2);
-            System.out.println("Platillo Servido\n");
-            robot.reducirPasosServirPlatillo();        
-            }
-            catch (InterruptedException e) {
-                System.out.println("Que desesperado >:v. Platillo servido.\n");
-                robot.reducirPasosServirPlatillo(); 
-            }
-        }
-        else{
             System.out.println("Ya te servi paps. Mejor mandame a dormir.");
-        }
     }
 
     
     public void suspender(){
-        if(robot.pasosServirPlatillo > 0){
-            System.out.println("Aun no te he servido paps, primero dejame servirte y luego ya vemos.\n");
-            System.out.println("*******************************");
-            System.out.println("*                             *");
-            System.out.println("*        MODO SIRVIENDO       *");
-            System.out.println("*                             *");
-            System.out.println("*******************************\n");
-        }
-        else{
             System.out.println("Gracias por ordenar en tu restaurante favorito Mcburguesas :).");
             System.out.println("Disfrute su comida.\n");
             System.out.println("Pasando a modo suspendido...\n");
@@ -88,7 +63,7 @@ public class Sirviendo implements EstadoRobot{
             System.out.println("*****************************\n");
             robot.setEstado(robot.getEstadoSuspendido());
         }
-    }
+    
 
     public void autodestruir() {
         System.out.println("Entonces has elegido el camino de la muerte. Autodestruccion en:");
