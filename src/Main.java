@@ -14,7 +14,7 @@ public class Main {
     menu.add(menuEspecial);
     MenuDelDia menuDelDia = new MenuDelDia("Menu Diario", "Menu diario, notendras otra oportunidad para probar estas hamburguesas");
     menuDelDia.add(new HamburguesaPastor());
-    menuDelDia.add(new HamburguesaCamaron());
+    menuDelDia.add(new UltiMeatum());
     menuDelDia.add(new HamburguesaLenteja());
     menu.add(menuDelDia);
 		Robot Patricio = new Robot(menu.getIterator());

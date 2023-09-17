@@ -12,7 +12,7 @@ public abstract class Hamburguesa{
     public int getId() {
         return id;
     }
-    public String getNombre() {
+    public String getName() {
         return nombre;
     }
     public double getPrecio() {
