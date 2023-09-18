@@ -3,6 +3,7 @@ import java.util.Iterator;
 import Iterator.MenuDelDia;
 import Iterator.MenuEspecial;
 import Iterator.MenuGeneral;
+import Template.Hamburguesa;
 
 public class Robot {
     EstadoRobot suspendido;
@@ -13,6 +14,8 @@ public class Robot {
     EstadoRobot autodestruido;
     EstadoRobot estadoActual;
     Iterator iteratorMenus;
+    Boolean yaEscogioHamburguesa;
+    Hamburguesa hamburguesaSeleccionada;
 
 
     /*
@@ -26,7 +29,8 @@ public class Robot {
         cocinando = new Cocinando(this);
         sirviendo = new Sirviendo(this);
         autodestruido = new AutoDestruido(this);
-
+        
+        yaEscogioHamburguesa = false; 
         estadoActual = suspendido;
     }
 

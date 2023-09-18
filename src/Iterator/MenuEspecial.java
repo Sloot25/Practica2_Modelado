@@ -3,7 +3,6 @@ import java.util.Iterator;
 import java.util.Hashtable;
 
 import Template.Hamburguesa;
-import Template.HamburguesaRes;
 
 public class MenuEspecial implements MenuComponent{
   Hashtable<Integer, Hamburguesa> hamburguesasEspeciales;

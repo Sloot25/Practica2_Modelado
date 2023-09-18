@@ -2,6 +2,8 @@ package Template;
 
 public class HamburguesaLenteja extends Hamburguesa{
     public HamburguesaLenteja(){
+        this.id = 2003;
+        precio = 80;
         esVegetariana = true;
         nombre = "Hamburguesa de Lentejas";
         descripcion = "Opcion saludable y nutritiva";

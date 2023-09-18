@@ -12,8 +12,8 @@ public class Main {
     menuEspecial.add(new Cangreburger());
     menuEspecial.add(new KrustyBurger());
     menu.add(menuEspecial);
-    MenuDelDia menuDelDia = new MenuDelDia("Menu Diario", "Menu diario, notendras otra oportunidad para probar estas hamburguesas");
-    menuDelDia.add(new HamburguesaPastor());
+    MenuDelDia menuDelDia = new MenuDelDia("Menu Diario", "Esta es el menu del día, no tendras otra oportunidad para probar estas hamburguesas");
+    menuDelDia.add(new HamburguesaPescado());
     menuDelDia.add(new UltiMeatum());
     menuDelDia.add(new HamburguesaLenteja());
     menu.add(menuDelDia);
@@ -80,16 +80,16 @@ public class Main {
 						Patricio.servir();
 						break;
           
-          case 6:
+          			case 6:
 						Patricio.suspender();
 						break;
           
-          case 7:
+          			case 7:
 						Patricio.autodestruir();
 						break;
 
 					case 0:
-            System.out.println("Saliendo del restaurante...");
+					System.out.println("Saliendo del restaurante...");
 						break;
 
 					default:

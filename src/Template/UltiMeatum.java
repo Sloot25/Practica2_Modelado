@@ -2,6 +2,8 @@ package Template;
 
 public class UltiMeatum extends Hamburguesa{
     public UltiMeatum(){
+        this.id = 2002;
+        precio = 200;
         esVegetariana = false;
         nombre = "MagnifiCarne";
         descripcion = "La mejor hamburguesa del mundo. Solo se prepara una vez cada mil años. El que no se coma una es un zoquete";

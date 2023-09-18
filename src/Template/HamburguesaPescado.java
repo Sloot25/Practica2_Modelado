@@ -1,6 +1,8 @@
 package Template;
 public class HamburguesaPescado extends Hamburguesa{
     public HamburguesaPescado(){
+        this.id = 2001;
+        precio = 110;
         esVegetariana = false;
         nombre = "Hamburguesa de pescado";
         descripcion = "Rico Rico Pescadito";

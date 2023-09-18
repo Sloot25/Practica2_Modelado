@@ -1,10 +1,16 @@
 package State;
 import Iterator.MenuComponent;
+import Template.*;
+
+import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
+import java.util.Scanner;
 
 public class Atendiendo implements EstadoRobot{
     Robot robot;
+    Scanner entrada = new Scanner(System.in);
+    Hamburguesa hamburguesa;
 
     // Creamos un objeto TimeUnit para las pausas
     TimeUnit time = TimeUnit.SECONDS;
@@ -33,43 +39,100 @@ public class Atendiendo implements EstadoRobot{
 
     public void ordenar(){
         System.out.println("Sale pues, te muestro el menu:");
-        //System.out.println(".\n.\n.\n.\n.\n");           // aqui nos peleamos con colocar el menu y almacenar la hamburguesa que pide
-      while(this.robot.iteratorMenus.hasNext()){
-        MenuComponent menus = (MenuComponent) this.robot.iteratorMenus.next();
-        Iterator iterator = menus.crearIterador();
-      System.out.println("-------------------------------------------------------------------------");
-        System.out.println(menus.getName());
-      System.out.println("-------------------------------------------------------------------------");
-      System.out.println(menus.getDescription());
-      System.out.println("-------------------------------------------------------------------------");
-        while(iterator.hasNext()){
-          System.out.println(iterator.next());
+        while(this.robot.iteratorMenus.hasNext()){
+            MenuComponent menus = (MenuComponent) this.robot.iteratorMenus.next();
+            Iterator iterator = menus.crearIterador();
+            System.out.println("-------------------------------------------------------------------------");
+            System.out.println(menus.getName());
+            System.out.println("-------------------------------------------------------------------------");
+            System.out.println(menus.getDescription());
+            System.out.println("-------------------------------------------------------------------------");
+            while(iterator.hasNext()){
+                System.out.println(iterator.next());
+                System.out.println("\n");
+            }
+        } 
+
+        System.out.println("¿Indique el Id de la hamburguesa que desea ordenar?");
+
+        while(true){
+            String opcionUsuario = entrada.nextLine();
+            switch(opcionUsuario){
+                case "1001":
+                    robot.hamburguesaSeleccionada = new HamburguesaPastor();
+                    robot.yaEscogioHamburguesa = true;
+                    break;
+
+                case "1002":
+                    robot.hamburguesaSeleccionada = new HamburguesaPollo();
+                    robot.yaEscogioHamburguesa = true;
+                    break;
+
+                case "1003":
+                    robot.hamburguesaSeleccionada = new HamburguesaSoya();
+                    robot.yaEscogioHamburguesa = true;
+                    break;
+
+                case "2001":
+                    robot.hamburguesaSeleccionada = new HamburguesaPescado();
+                    robot.yaEscogioHamburguesa = true;
+                    break;
+
+                case "2002":
+                    robot.hamburguesaSeleccionada = new UltiMeatum();
+                    robot.yaEscogioHamburguesa = true;
+                    break;
+
+                case "2003":
+                    robot.hamburguesaSeleccionada = new HamburguesaLenteja();
+                    robot.yaEscogioHamburguesa = true;
+                    break;
+
+                case "3001":
+                    robot.hamburguesaSeleccionada = new Cangreburger();
+                    robot.yaEscogioHamburguesa = true;
+                    break;
+
+                case "3002":
+                    robot.hamburguesaSeleccionada = new KrustyBurger();
+                    robot.yaEscogioHamburguesa = true;
+                    break;
+                
+                case "3003":
+                    robot.hamburguesaSeleccionada = new HamburguesaHumano();
+                    robot.yaEscogioHamburguesa = true;
+                    break;
+
+                default:
+                    System.out.println("El Id que selecciono no se encuentra en el menu. Favor de intentarlo nuevamente ");
+                    entrada.next();
+                }
         }
-      }
-        System.out.println("*******************************");
-        System.out.println("*                             *");
-        System.out.println("*       MODO ATENDIENDO       *");
-        System.out.println("*                             *");
-        System.out.println("*******************************\n");
+        System.out.println("Hamburguesa seleccionada correctamente. Mandame a cocinar para preparar tu hamburguesa");
     }
 
     public void cocinar(){
-        /*
-         *  if (yaEscogioHamburguesa){
-         *      cambiar a estadoCocinando
-         * }
-         *  else{
-         *      System.out.println("Primero escoge tu hamburguesa y luego ya vemos si cocinamos.");
-         * }
-         */
-        System.out.println("Pasando a modo Cocinando...");
-        System.out.println("*Suena Le Festini de fondo*\n");
-        System.out.println("*****************************");
-        System.out.println("*                           *");
-        System.out.println("*      MODO COCINANDO       *");
-        System.out.println("*                           *");
-        System.out.println("*****************************\n");
-        robot.setEstado(robot.getEstadoCocinando());
+    
+        if (robot.yaEscogioHamburguesa){
+            System.out.println("Pasando a modo Cocinando...");
+            System.out.println("*Suena Le Festini de fondo*\n");
+            System.out.println("*****************************");
+            System.out.println("*                           *");
+            System.out.println("*      MODO COCINANDO       *");
+            System.out.println("*                           *");
+            System.out.println("*****************************\n");
+            robot.hamburguesaSeleccionada.prepararHamburguesa();
+            robot.setEstado(robot.getEstadoCocinando());
+        }
+        else{
+            System.out.println("Primero escoge tu hamburguesa y luego ya vemos si cocinamos.");
+            System.out.println("*******************************");
+            System.out.println("*                             *");
+            System.out.println("*       MODO ATENDIENDO       *");
+            System.out.println("*                             *");
+            System.out.println("*******************************\n");
+        }
+        
     }
 
     public void servir(){

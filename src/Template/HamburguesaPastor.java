@@ -3,6 +3,8 @@ package Template;
 public class HamburguesaPastor extends Hamburguesa {
 
     public HamburguesaPastor(){
+        this.id = 1001;
+        precio = 90;
         esVegetariana = false;
         nombre = "Hamburguesa de Pastor";
         descripcion = "Especial Mexicana por el dia de la independencia";

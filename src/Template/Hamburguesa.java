@@ -75,7 +75,10 @@ public abstract class Hamburguesa{
     }
     public String toString(){
         String s = "";
-        s += nombre + "\n" + descripcion;
+        s += "Id: "+ String.valueOf(id) + "\n"
+            + "Nombre: "+ nombre + "\n" 
+            + "Descripcion: " + descripcion + "\n"
+            + "Precio: " + "$" + String.valueOf(precio) + "\n";
         if(esVegetariana())
             s += " (Vegetariana) ";
         return s;            
