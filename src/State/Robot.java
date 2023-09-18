@@ -1,11 +1,8 @@
 package State;
 import java.util.Iterator;
-import Iterator.MenuDelDia;
-import Iterator.MenuEspecial;
-import Iterator.MenuGeneral;
 import Template.Hamburguesa;
 
-public class Robot {
+public class Robot implements EstadoRobot {
     EstadoRobot suspendido;
     EstadoRobot caminando;
     EstadoRobot atendiendo;

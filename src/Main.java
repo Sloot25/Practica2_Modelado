@@ -6,13 +6,13 @@ import Iterator.*;
 public class Main {
   public static void main(String[] args){
     Menu menu = new Menu("Menu de McBurguers", "Bienvenido al menu de McBurguers, dentro del restaurante tenemos las siguientes opciones");
-    menu.add(new MenuGeneral("Menu principal", "Platillos de todos los dias, para los clientes casuales"));
-    MenuEspecial menuEspecial = new MenuEspecial("Menu Exclusivo de gente con Dinero", "Este menu es especial y seleccionado a partir de los mejores ingredientes");
+    menu.add(new MenuGeneral());
+    MenuEspecial menuEspecial = new MenuEspecial();
     menuEspecial.add(new HamburguesaHumano());
     menuEspecial.add(new Cangreburger());
     menuEspecial.add(new KrustyBurger());
     menu.add(menuEspecial);
-    MenuDelDia menuDelDia = new MenuDelDia("Menu Diario", "Esta es el menu del día, no tendras otra oportunidad para probar estas hamburguesas");
+    MenuDelDia menuDelDia = new MenuDelDia();
     menuDelDia.add(new HamburguesaPescado());
     menuDelDia.add(new UltiMeatum());
     menuDelDia.add(new HamburguesaLenteja());
@@ -80,11 +80,11 @@ public class Main {
 						Patricio.servir();
 						break;
           
-          			case 6:
-						Patricio.suspender();
+          case 6:
+            Patricio.suspender();
 						break;
-          
-          			case 7:
+    
+          case 7:
 						Patricio.autodestruir();
 						break;
 

@@ -40,15 +40,14 @@ public class MenuGeneral implements MenuComponent{
       }
   }
 
-  /*  Constructor de la clase, inicializa el arreglo y les asigna sus correspondientes elementos
-   *  @param name String correspondiente al nombre del Menu
-   *  @param description String correspondiente a la description del menu
+  /*  Constructor de la clase, inicializa el arreglo y les asigna sus correspondientes elementos, al igual que 
+   *  inicializa los String con sus correspondientes valores dependiendo del menu
    *
    * */
-  public MenuGeneral(String name, String description){
+  public MenuGeneral(){
     this.hamburguesasGeneral = new Hamburguesa[]{new HamburguesaPastor(), new HamburguesaPollo(), new HamburguesaSoya()};
-    this.name = name; 
-    this.description = description;
+    this.name = "Menu general"; 
+    this.description = "Platillos de todos los dias, para el cliente casual";
   }
 
   /*  Metodo que regresa el nombre del menu
@@ -73,6 +72,7 @@ public class MenuGeneral implements MenuComponent{
    *  @return Iterator correspondiente al arreglo del menu
    *
    * */
+  @Override
   public Iterator crearIterador(){
     return new IteradorMenuGeneral();
   }

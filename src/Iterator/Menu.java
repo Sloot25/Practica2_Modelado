@@ -41,6 +41,7 @@ public class Menu implements MenuComponent {
    *  @return String correspondiente al nombre del menu
    *
    * */
+  @Override
   public String getName(){
     return this.name; 
   }
@@ -49,6 +50,7 @@ public class Menu implements MenuComponent {
    *  @return String correspondiente a la description del menu
    *
    * */
+  @Override
   public String getDescription(){
     return this.description;
   }
@@ -67,6 +69,7 @@ public class Menu implements MenuComponent {
    *  @return Regresa un objeto de tipo Iterator
    *
    * */
+  @Override
   public Iterator crearIterador(){
     return this.listaDeMenus.iterator();
   }

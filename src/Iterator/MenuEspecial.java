@@ -45,10 +45,10 @@ public class MenuEspecial implements MenuComponent{
    *  @param description String que corresponde a la descriptcion del menu
    *
    * */
-  public MenuEspecial(String name, String description){
-      this.hamburguesasEspeciales = new Hashtable<Integer, Hamburguesa>();
-    this.name = name;
-    this.description = description;
+  public MenuEspecial(){
+    this.hamburguesasEspeciales = new Hashtable<Integer, Hamburguesa>();
+    this.name = "Menu Exclusivo de gente con dinero (VIP)";
+    this.description = "Este menu es especial y seleccionado a partir de los mejores ingredientes, frescos y con una preparacion particular";
   }
 
   /*  Metodo para agregar elementos a nuestro HashTable

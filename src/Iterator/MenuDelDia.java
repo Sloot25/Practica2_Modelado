@@ -8,14 +8,13 @@ public class MenuDelDia implements MenuComponent{
   ArrayList<Hamburguesa> hamburguesasMenuDelDia;
   String name, description;
 
-  /* Constructor de la clase MenuDelDia, inicializa el ArrayList y asigna valores a nuestros atributos
-   * @param name Recibe el nombre del menu
-   * @param Recibe la description del menu
+  /* Constructor de la clase MenuDelDia, inicializa el ArrayList y asigna valores a nuestros atributos correspondientes a 
+   * los nombres y descripcion de nuestro menu
    *
    * */
-  public MenuDelDia(String name, String description){
-    this.name = name;
-    this.description = description;
+  public MenuDelDia(){
+    this.name = "Menu Diario";
+    this.description = "Este menu se actualiza cada dia, No tendras otra oportunidad de probar estas hamburguesas";
     this.hamburguesasMenuDelDia = new ArrayList<Hamburguesa>();
   }
 
