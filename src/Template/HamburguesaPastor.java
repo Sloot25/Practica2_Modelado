@@ -1,3 +1,6 @@
+/*
+ * Hamburguesa del menu general
+ */
 package Template;
 
 public class HamburguesaPastor extends Hamburguesa {

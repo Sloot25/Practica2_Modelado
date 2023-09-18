@@ -1,3 +1,6 @@
+/*
+ * Hamburguesa del menu especial
+ */
 package Template;
 
 public class KrustyBurger extends Hamburguesa{

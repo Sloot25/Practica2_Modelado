@@ -1,3 +1,6 @@
+/*
+ * Hamburguesa del menu del dia
+ */
 package Template;
 
 public class UltiMeatum extends Hamburguesa{

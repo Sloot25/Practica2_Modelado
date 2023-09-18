@@ -1,10 +1,14 @@
+/*
+ * Estado del robot que se ejecuta cuando utilizan el metodo servir()
+ * en el estado Cocinando. Para pasar al siguiente estado hay que llamar al 
+ * metodo suspender() o autodestruir().
+ */
 package State;
 
 import java.util.concurrent.TimeUnit;
 
 public class Sirviendo implements EstadoRobot{
     Robot robot;
-
     // Creamos un objeto TimeUnit para las pausas
     TimeUnit time = TimeUnit.SECONDS;
 
@@ -12,6 +16,9 @@ public class Sirviendo implements EstadoRobot{
         this.robot = robot;
     }
     
+    /*
+     * Este metodo te mantiene en el estado Sirviendo
+     */
     public void llamar(){
         System.out.println("Ya me llamaste. Solo me flata servirte.\n");
         System.out.println("*******************************");
@@ -21,6 +28,9 @@ public class Sirviendo implements EstadoRobot{
         System.out.println("*******************************\n");
     }
 
+    /*
+     * Este metodo te mantiene en el estado Sirviendo
+     */
     public void caminar(){
         System.out.println("No puedo caminar. Solo me falta servirte.\n");
         System.out.println("*******************************");
@@ -30,6 +40,9 @@ public class Sirviendo implements EstadoRobot{
         System.out.println("*******************************\n");
     }
 
+    /*
+     * Este metodo te mantiene en el estado Sirviendo
+     */
     public void ordenar(){
         System.out.println("¿Quieres mas? :O. Deja primero te sirvo y luego me vuelves a llamar.\n");
         System.out.println("*******************************");
@@ -37,8 +50,11 @@ public class Sirviendo implements EstadoRobot{
         System.out.println("*        MODO SIRVIENDO       *");
         System.out.println("*                             *");
         System.out.println("*******************************\n");
-
     }
+
+    /*
+     * Este metodo te mantiene en el estado Sirviendo
+     */
     public void cocinar(){
         System.out.println("Ya ordenaste tu comida. Solo me falta servirte.\n");
         System.out.println("*******************************");
@@ -47,11 +63,22 @@ public class Sirviendo implements EstadoRobot{
         System.out.println("*                             *");
         System.out.println("*******************************\n");
     }
+
+    /*
+     * Este metodo te mantiene en el estado Sirviendo
+     */
     public void servir(){
             System.out.println("Ya te servi paps. Mejor mandame a dormir.");
+            System.out.println("*******************************");
+            System.out.println("*                             *");
+            System.out.println("*        MODO SIRVIENDO       *");
+            System.out.println("*                             *");
+            System.out.println("*******************************\n");
     }
 
-    
+    /*
+     * Este metodo te manda al estado Suspender
+     */
     public void suspender(){
             System.out.println("Gracias por ordenar en tu restaurante favorito Mcburguesas :).");
             System.out.println("Disfrute su comida.\n");
@@ -64,7 +91,9 @@ public class Sirviendo implements EstadoRobot{
             robot.setEstado(robot.getEstadoSuspendido());
         }
     
-
+    /*
+     * Este metodo te manda al estado Autodestruido
+     */
     public void autodestruir() {
         System.out.println("Entonces has elegido el camino de la muerte. Autodestruccion en:");
         try {

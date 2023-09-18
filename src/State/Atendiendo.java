@@ -1,8 +1,12 @@
+/*
+ * Estado del robot que se ejecuta cuando utilizan el metodo
+ * llamar() en el estado Suspendido. Para avanzar al siguiente estado
+ * debe ordenar(), seleccionar una hamburguesa y despues mandar a cocinar() 
+ */
+
 package State;
 import Iterator.MenuComponent;
 import Template.*;
-
-import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import java.util.Scanner;
@@ -11,7 +15,6 @@ public class Atendiendo implements EstadoRobot{
     Robot robot;
     Scanner entrada = new Scanner(System.in);
     Hamburguesa hamburguesa;
-
     // Creamos un objeto TimeUnit para las pausas
     TimeUnit time = TimeUnit.SECONDS;
 
@@ -19,6 +22,9 @@ public class Atendiendo implements EstadoRobot{
         this.robot = robot;
     }
 
+    /*
+     * Este metodo te mantiene en el estado Atendiendo
+     */
     public void llamar(){
         System.out.println("Ya estoy contigo. Pa que me llamas.\n");
         System.out.println("*******************************");
@@ -28,6 +34,9 @@ public class Atendiendo implements EstadoRobot{
         System.out.println("*******************************\n");
     }
 
+    /*
+     * Este metodo te mantiene en el estado Atendiendo
+     */
     public void caminar(){
         System.out.println("¿Para que quiere que camine? Si ya estoy aqui papito.\n");
         System.out.println("*******************************");
@@ -36,6 +45,14 @@ public class Atendiendo implements EstadoRobot{
         System.out.println("*                             *");
         System.out.println("*******************************\n");
     }
+
+    /*
+     * Metodo que utiliza los iteradores creados en el Iterator para 
+     * mostrar el menu al usuario y pedirle el ID de la hamburguesa a pedir. 
+     * Guarda esto en la variable robot.hamburguesaSeleccionada y cambia 
+     * la variable robot.yaEscogioHamburguesa = true que seran usados en 
+     * el metodo cocinar()
+     */
 
     public void ordenar(){
         System.out.println("Sale pues, te muestro el menu:");
@@ -123,6 +140,11 @@ public class Atendiendo implements EstadoRobot{
         System.out.println("*******************************\n");
     }
 
+    /*
+     * Metodo que te manda al estado Cocinando siempre y cuando el usuario 
+     * haya escogido la hamburguesa. Tambien muestra en pantalla como
+     * se prepara la hamburguesa.
+     */
     public void cocinar(){
     
         if (robot.yaEscogioHamburguesa){
@@ -143,10 +165,12 @@ public class Atendiendo implements EstadoRobot{
             System.out.println("*       MODO ATENDIENDO       *");
             System.out.println("*                             *");
             System.out.println("*******************************\n");
-        }
-        
+        } 
     }
 
+    /*
+     * Este metodo te mantiene en el estado Atendiendo
+     */
     public void servir(){
         System.out.println("¿Que te voy a servir si ni siquiera has pedido?  >:c\n");
         System.out.println("*******************************");
@@ -155,7 +179,10 @@ public class Atendiendo implements EstadoRobot{
         System.out.println("*                             *");
         System.out.println("*******************************\n");
     }
-   
+
+    /*
+     * Este metodo te mantiene en el estado Atendiendo
+     */
     public void suspender(){
         System.out.println("Nel, no puedo dormir, ya estoy aqui.\n");
         System.out.println("*******************************");
@@ -165,6 +192,9 @@ public class Atendiendo implements EstadoRobot{
         System.out.println("*******************************\n");
     }
 
+    /*
+     * Metodo que te manda directamente al estado Autodestruido
+     */
     public void autodestruir() {
         System.out.println("Entonces has elegido el camino de la muerte. Autodestruccion en:");
         try {

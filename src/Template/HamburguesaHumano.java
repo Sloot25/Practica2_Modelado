@@ -1,3 +1,6 @@
+/*
+ * Hamburguesa del menu Especial
+ */
 package Template;
 
 public class HamburguesaHumano extends Hamburguesa{
@@ -8,6 +11,7 @@ public class HamburguesaHumano extends Hamburguesa{
         nombre = "Hamburguesa de Humano";
         descripcion = "Hamburguesa preparado con la carne de los clientes que se van sin pagar";
     }
+
     public void prepararHamburguesa(){
         ponerPan();
         ponerMayonesa();
@@ -20,6 +24,7 @@ public class HamburguesaHumano extends Hamburguesa{
         ponerVegetales();
         ponerPan();
     }
+    
     @Override 
     public void prepararCarne(){
         System.out.println("Preparando la carne donada 'voluntariamente' por el ultimo cliente. Tenia que pagar su comida de alguna manera");

@@ -1,10 +1,15 @@
+/*
+ * Estado del robot que se ejecuta cuando utilizan el metodo llamar()
+ * en el estado Suspendido. Para pasar al siguiente estado hay que 
+ * llamar al metodo caminar(), suspender o bien, autodestruir().
+ */
+
 package State;
 
 import java.util.concurrent.TimeUnit;
 
 public class Caminando implements EstadoRobot {
     Robot robot;
-
     // Creamos un objeto TimeUnit para las pausas
     TimeUnit time = TimeUnit.SECONDS;
 
@@ -12,6 +17,9 @@ public class Caminando implements EstadoRobot {
         this.robot = robot;
     }
 
+    /*
+     * Este metodo te mantiene en el estado Caminando
+     */
     public void llamar() {
         System.out.println("Ya me llamaste, en un momento estoy contigo.\n");
         System.out.println("******************************");
@@ -21,6 +29,9 @@ public class Caminando implements EstadoRobot {
         System.out.println("******************************\n");
     }
 
+    /*
+     * Este metodo te manda al siguiente estado Atendiendo
+     */
     public void caminar(){
         try {
             System.out.println("¡Voy en camino!");
@@ -46,6 +57,9 @@ public class Caminando implements EstadoRobot {
         System.out.println("*******************************\n");
     }
     
+    /*
+     * Este metodo te mantiene en el estado Caminando
+     */
     public void ordenar() {
         System.out.println("No puedo tomar tu orden, aun no llego. Perame\n");
         System.out.println("******************************");
@@ -55,6 +69,9 @@ public class Caminando implements EstadoRobot {
         System.out.println("******************************\n");
     }
 
+    /*
+     * Este metodo te mantiene en el estado Caminando
+     */
     public void cocinar() {
         System.out.println("No puedo cocinar si ando caminando. No manches\n");
         System.out.println("******************************");
@@ -64,6 +81,9 @@ public class Caminando implements EstadoRobot {
         System.out.println("******************************\n");
     }
 
+    /*
+     * Este metodo te mantiene en el estado Caminando
+     */
     public void servir() {
         System.out.println("¿Que te voy a servir si ni siquiera he llegado?  >:c\n");
         System.out.println("******************************");
@@ -73,6 +93,9 @@ public class Caminando implements EstadoRobot {
         System.out.println("******************************\n");
     }
 
+    /*
+     * Este metodo te manda al estado Suspendido
+     */
     public void suspender() {
         System.out.println("Ah bueno, ni queria. A mimir.\nPasando a modo suspendido.\n");
         System.out.println("*****************************");
@@ -83,6 +106,9 @@ public class Caminando implements EstadoRobot {
         robot.setEstado(robot.getEstadoSuspendido());
     }
 
+    /*
+     * Este metodo te manda al estado Autodestruido
+     */
     public void autodestruir() {
         System.out.println("Entonces has elegido el camino de la muerte. Autodestruccion en:");
         try {

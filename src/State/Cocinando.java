@@ -1,3 +1,9 @@
+/*
+ * Estado del robot que se ejecuta cuando utilizan el metodo cocinar()
+ * en el estado Atendiendo. Para pasar al siguiente estado hay que 
+ * llamar al metodo servir() o bien, autodestruir().
+ */
+
 package State;
 
 import java.util.concurrent.TimeUnit;
@@ -11,6 +17,9 @@ public class Cocinando implements EstadoRobot {
         this.robot = robot;
     }
     
+    /*
+     * Este metodo te mantiene en el estado Cocinando
+     */
     public void llamar(){
         System.out.println("Ya estoy cocinando tu comida. Perame.\n");
         System.out.println("*******************************");
@@ -20,6 +29,9 @@ public class Cocinando implements EstadoRobot {
         System.out.println("*******************************\n");
     }
 
+    /*
+     * Este metodo te mantiene en el estado Cocinando
+     */
     public void caminar(){
         System.out.println("No puedo caminar mientras cocino. Perame.\n");
         System.out.println("*******************************");
@@ -29,6 +41,9 @@ public class Cocinando implements EstadoRobot {
         System.out.println("*******************************\n");
     }
 
+    /*
+     * Este metodo te mantiene en el estado Cocinando
+     */
     public void ordenar(){
         System.out.println("Ya ordenaste tu comida. Perame.\n");
         System.out.println("*******************************");
@@ -36,16 +51,23 @@ public class Cocinando implements EstadoRobot {
         System.out.println("*        MODO COCINANDO       *");
         System.out.println("*                             *");
         System.out.println("*******************************\n");
-
     }
+
+    /*
+     * Este metodo te mantiene en el estado Cocinando
+     */
     public void cocinar(){
-        System.out.println("No estas viendo que ya estoy cocinado tu comida. *Sigue sonando Le Festini de fondo*. Perame.\n");
+        System.out.println("Tu comida aun no esta lista. Perame. *Sigue sonando Le Festini de fondo*.\n");
         System.out.println("*******************************");
         System.out.println("*                             *");
         System.out.println("*        MODO COCINANDO       *");
         System.out.println("*                             *");
         System.out.println("*******************************\n");
     }
+
+    /*
+     * Este metodo te manda al estado Sirviendo
+     */
     public void servir(){
         System.out.println("¡Platillo listo!");
         System.out.println("Pasando a modo sirviendo...\n");
@@ -67,7 +89,9 @@ public class Cocinando implements EstadoRobot {
         robot.setEstado(robot.getEstadoSirviendo());
     }
 
-    
+    /*
+     * Este metodo te mantiene en el estado Cocinando
+     */    
     public void suspender(){
         System.out.println("No puedo suspenderme mientras cocino.\n");
         System.out.println("*******************************");
@@ -76,6 +100,10 @@ public class Cocinando implements EstadoRobot {
         System.out.println("*                             *");
         System.out.println("*******************************\n");
     }
+
+    /*
+     * Este metodo te manda al estado Autodestruido
+     */
     public void autodestruir() {
         System.out.println("Entonces has elegido el camino de la muerte. Autodestruccion en:");
         try {
