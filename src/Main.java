@@ -26,7 +26,7 @@ public class Main {
     System.out.println("*        BIENVENIDO A LA CONSOLA DE LAS MCBURGUERS.       *");
     System.out.println("*                                                         *");
     System.out.println("***********************************************************\n");
-		System.out.println("Por favor elige la opcion que deseas ejecutar.");
+	System.out.println("Por favor elige la opcion que deseas ejecutar.");
 
 		do{
 			System.out.println(

@@ -54,61 +54,73 @@ public class Atendiendo implements EstadoRobot{
         } 
 
         System.out.println("¿Indique el Id de la hamburguesa que desea ordenar?");
-
-        while(true){
+  
+        while(robot.yaEscogioHamburguesa == false){
             String opcionUsuario = entrada.nextLine();
-            switch(opcionUsuario){
-                case "1001":
+            int opcion; 
+            try {
+                opcion = Integer.parseInt(opcionUsuario);
+            } catch (NumberFormatException e) {
+                System.out.println("Error: Debe ingresar un número entero. Intente nuevamente.");
+                continue;
+            }
+            switch(opcion){
+                case 1001:
                     robot.hamburguesaSeleccionada = new HamburguesaPastor();
                     robot.yaEscogioHamburguesa = true;
                     break;
 
-                case "1002":
+                case 1002:
                     robot.hamburguesaSeleccionada = new HamburguesaPollo();
                     robot.yaEscogioHamburguesa = true;
                     break;
 
-                case "1003":
+                case 1003:
                     robot.hamburguesaSeleccionada = new HamburguesaSoya();
                     robot.yaEscogioHamburguesa = true;
                     break;
 
-                case "2001":
+                case 2001:
                     robot.hamburguesaSeleccionada = new HamburguesaPescado();
                     robot.yaEscogioHamburguesa = true;
                     break;
 
-                case "2002":
+                case 2002:
                     robot.hamburguesaSeleccionada = new UltiMeatum();
                     robot.yaEscogioHamburguesa = true;
                     break;
 
-                case "2003":
+                case 2003:
                     robot.hamburguesaSeleccionada = new HamburguesaLenteja();
                     robot.yaEscogioHamburguesa = true;
                     break;
 
-                case "3001":
+                case 3001:
                     robot.hamburguesaSeleccionada = new Cangreburger();
                     robot.yaEscogioHamburguesa = true;
                     break;
 
-                case "3002":
+                case 3002:
                     robot.hamburguesaSeleccionada = new KrustyBurger();
                     robot.yaEscogioHamburguesa = true;
                     break;
                 
-                case "3003":
+                case 3003:
                     robot.hamburguesaSeleccionada = new HamburguesaHumano();
                     robot.yaEscogioHamburguesa = true;
                     break;
 
                 default:
                     System.out.println("El Id que selecciono no se encuentra en el menu. Favor de intentarlo nuevamente ");
-                    entrada.next();
                 }
         }
-        System.out.println("Hamburguesa seleccionada correctamente. Mandame a cocinar para preparar tu hamburguesa");
+        
+        System.out.println("\nHamburguesa seleccionada correctamente. Mandame a cocinar para preparar tu hamburguesa.\n");
+        System.out.println("*******************************");
+        System.out.println("*                             *");
+        System.out.println("*       MODO ATENDIENDO       *");
+        System.out.println("*                             *");
+        System.out.println("*******************************\n");
     }
 
     public void cocinar(){

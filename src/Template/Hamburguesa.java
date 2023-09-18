@@ -42,7 +42,7 @@ public abstract class Hamburguesa{
         try{
             s = br.readLine();
         } catch (IOException ioe){
-            System.err.println("Hubo un error leyendo la respuesta");
+            System.err.println("Hubo un error leyendo la respuesta.");
         }
         if(s == null){
             return "no";
@@ -52,26 +52,26 @@ public abstract class Hamburguesa{
     public void prepararHamburguesa(){
     }
     public void ponerPan(){
-        System.out.println("Poniendo pan. Asi es");
+        System.out.println("Poniendo pan... Asi es.");
     }
     public void ponerMayonesa(){
-        System.out.println("Una buena hamburguesa debe llevar Mayonesa McCormick. Hellmans, Hellmans. Que bruto!");
+        System.out.println("Poniendo mayonesa... una buena hamburguesa debe llevar Mayonesa McCormick. Hellmans, Hellmans. Que bruto!");
     }
     public void ponerMostaza(){
-        System.out.println("Agregando la mostaza");
+        System.out.println("Agregando la mostaza.");
     }
     public abstract void prepararCarne();
     public void ponerCarne(){
-        System.out.println("Agregando la carne");
+        System.out.println("Agregando la carne.");
     }
     public void ponerQueso(){
-        System.out.println("Agregando queso");
+        System.out.println("Agregando queso.");
     }
     public void ponerVegetales(){
-        System.out.println("Lechuga, tomate, cebolla y pepinillos");
+        System.out.println("Poniendo vegetales...Lechuga, tomate, cebolla y pepinillos.");
     }
     public void ponerCatsup(){
-        System.out.println("Agregando ketchup. Y Asereje, a, reje, rejeturebeseiyounoubi");
+        System.out.println("Agregando ketchup... Y Asereje, a, reje, rejeturebeseiyounoubi.");
     }
     public String toString(){
         String s = "";
