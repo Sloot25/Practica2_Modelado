@@ -76,6 +76,7 @@ public class Cocinando implements EstadoRobot {
         System.out.println("*        MODO SIRVIENDO       *");
         System.out.println("*                             *");
         System.out.println("*******************************\n");
+        
         try {
             System.out.println("Sirviendo...");
             time.sleep(2);
@@ -86,6 +87,7 @@ public class Cocinando implements EstadoRobot {
             catch (InterruptedException e) {
                 System.out.println("Que desesperado >:v. Platillo servido.\n");
             }
+        robot.yaEscogioHamburguesa = false;
         robot.setEstado(robot.getEstadoSirviendo());
     }
 
