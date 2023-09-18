@@ -17,7 +17,7 @@ public class Main {
     menuDelDia.add(new UltiMeatum());
     menuDelDia.add(new HamburguesaLenteja());
     menu.add(menuDelDia);
-		Robot Patricio = new Robot(menu.getIterator());
+		Robot Patricio = new Robot(menu.crearIterador());
 		Scanner sc = new Scanner(System.in);
 		int opcion;
 
