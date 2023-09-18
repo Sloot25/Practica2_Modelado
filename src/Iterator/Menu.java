@@ -1,9 +1,6 @@
 package Iterator;
 import java.util.Iterator; 
 import java.util.ArrayList;
-import Template.Hamburguesa;
-import java.util.Stack;
-import java.util.NoSuchElementException;
 /*  Clase con referencia hacia los Menus, proporciona un Iterator para iterar a nuestros diversos Menus
  *
  * */

@@ -15,11 +15,13 @@ public class Atendiendo implements EstadoRobot{
     Robot robot;
     Scanner entrada = new Scanner(System.in);
     Hamburguesa hamburguesa;
+    String menu;
     // Creamos un objeto TimeUnit para las pausas
     TimeUnit time = TimeUnit.SECONDS;
 
     public Atendiendo(Robot robot){
         this.robot = robot;
+        menu = "";
     }
 
     /*
@@ -59,17 +61,17 @@ public class Atendiendo implements EstadoRobot{
         while(this.robot.iteratorMenus.hasNext()){
             MenuComponent menus = (MenuComponent) this.robot.iteratorMenus.next();
             Iterator iterator = menus.crearIterador();
-            System.out.println("-------------------------------------------------------------------------");
-            System.out.println(menus.getName());
-            System.out.println("-------------------------------------------------------------------------");
-            System.out.println(menus.getDescription());
-            System.out.println("-------------------------------------------------------------------------");
+            menu += "-------------------------------------------------------------------------\n";
+            menu += menus.getName() + "\n";
+            menu += "-------------------------------------------------------------------------\n";
+            menu += menus.getDescription() + "\n";
+            menu += "-------------------------------------------------------------------------\n";
             while(iterator.hasNext()){
-                System.out.println(iterator.next());
-                System.out.println("\n");
+                menu += iterator.next() + "\n";
+                menu += "\n";
             }
         } 
-
+        System.out.println(menu);
         System.out.println("¿Indique el Id de la hamburguesa que desea ordenar?");
   
         while(robot.yaEscogioHamburguesa == false){

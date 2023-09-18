@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Iterator;
 import State.Robot;
 import Template.*;
 import Iterator.*;

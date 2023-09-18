@@ -14,7 +14,6 @@ public class Cangreburger extends Hamburguesa{
 
     @Override
     public void prepararHamburguesa(){
-        prepararHamburguesa();
         ponerPan();
         ponerMayonesa();
         prepararCarne();
