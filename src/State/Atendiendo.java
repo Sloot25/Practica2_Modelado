@@ -198,6 +198,8 @@ public class Atendiendo implements EstadoRobot{
      * Metodo que te manda directamente al estado Autodestruido
      */
     public void autodestruir() {
+        robot.hamburguesaSeleccionada = null;
+        robot.yaEscogioHamburguesa = false;
         System.out.println("Entonces has elegido el camino de la muerte. Autodestruccion en:");
         try {
             System.out.println("5");
