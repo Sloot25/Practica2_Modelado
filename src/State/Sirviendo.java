@@ -20,7 +20,7 @@ public class Sirviendo implements EstadoRobot{
      * Este metodo te mantiene en el estado Sirviendo
      */
     public void llamar(){
-        System.out.println("Ya me llamaste. Solo me flata servirte.\n");
+        System.out.println("Ya me llamaste y ya te servi paps.\n");
         System.out.println("*******************************");
         System.out.println("*                             *");
         System.out.println("*        MODO SIRVIENDO       *");
@@ -32,7 +32,7 @@ public class Sirviendo implements EstadoRobot{
      * Este metodo te mantiene en el estado Sirviendo
      */
     public void caminar(){
-        System.out.println("No puedo caminar. Solo me falta servirte.\n");
+        System.out.println("No puedo caminar, mejor suspendeme para finalizar.\n");
         System.out.println("*******************************");
         System.out.println("*                             *");
         System.out.println("*        MODO SIRVIENDO       *");
@@ -44,7 +44,7 @@ public class Sirviendo implements EstadoRobot{
      * Este metodo te mantiene en el estado Sirviendo
      */
     public void ordenar(){
-        System.out.println("¿Quieres mas? :O. Deja primero te sirvo y luego me vuelves a llamar.\n");
+        System.out.println("¿Quieres mas? :O. Primero suspendeme y luego me vuelves a llamar.\n");
         System.out.println("*******************************");
         System.out.println("*                             *");
         System.out.println("*        MODO SIRVIENDO       *");
@@ -56,7 +56,7 @@ public class Sirviendo implements EstadoRobot{
      * Este metodo te mantiene en el estado Sirviendo
      */
     public void cocinar(){
-        System.out.println("Ya ordenaste tu comida. Solo me falta servirte.\n");
+        System.out.println("Ya ordenaste tu comida. Mejor suspendeme y luego me vuelves a llamar.\n");
         System.out.println("*******************************");
         System.out.println("*                             *");
         System.out.println("*        MODO SIRVIENDO       *");
